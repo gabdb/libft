@@ -1,4 +1,4 @@
-
+#include "libft.h"
 
 int isalnum(int c)
 {

@@ -1,42 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 14:49:49 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/08 15:25:25 by gnyssens         ###   ########.fr       */
+/*   Created: 2024/04/08 15:26:42 by gnyssens          #+#    #+#             */
+/*   Updated: 2024/04/08 17:01:26 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t ft_strlcat(char *dest, const char *src, size_t size)
 {
+	size_t	dest_len;
+	size_t	src_len;
 	size_t	i;
-	int	len;
 
-	len = ft_strlen(src);
-	i = 0;
 	if (!dest || !src)
 		return (0);
-	while (i < size - 1 && src[i])
+	src_len = ft_strlen(src);
+	dest_len = ft_strlen(dest);
+	if (size <= dest_len)
+		return (size + src_len);
+	i = 0;
+	while (i < size - dest_len - 1 && src[i])
 	{
-		dest[i] = src[i];
+		dest[dest_len + i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (len);
+	dest[dest_len + i] = '\0';
+	return (src_len + dest_len);
 }
 /*
 int main(void)
 {
-	char dest[15];
-	const char *source = "test";
+	char	first[40] = "partie 1___";
+	char	sec[] = "partie 2";
 
-	int rien = ft_strlcpy(dest, source, 5);
-	printf("%s\n", dest);
+	int longueur = ft_strlcat(first, sec, 20);
+	printf("%s\n", first);
 
 	return (0);
 }

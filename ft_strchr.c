@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 16:10:59 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/08 15:23:42 by gnyssens         ###   ########.fr       */
+/*   Created: 2024/04/08 17:08:20 by gnyssens          #+#    #+#             */
+/*   Updated: 2024/04/08 17:26:54 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+char *ft_strchr(const char *str, int c)
 {
-	int	i;
+	const unsigned char	*new_str;
+	size_t				i;
 
+	new_str = (const unsigned char*) str;
 	i = 0;
-	while (s[i])
+	while (new_str[i])
+	{
+		if (c == new_str[i])
+			return (str + i);
 		i++;
-	return (i);
-}
-/*
-#include <stdio.h>
-int main(void)
-{
-	const char test[] = "jsp ";
-	size_t result = ft_strlen(test);
-	printf("%zu\n", result);
-
+	}
+	if (c == 0)
+		return (str + i);
 	return (0);
 }
-*/

@@ -20,13 +20,11 @@ char *ft_strrchr(const char *str, int c)
 	if (!str)
 		return (0);
 	new_str = (unsigned char*)str;
-	ind = ft_strlen(str) - 1;
-	if (c == 0 && ind >= 0)
-		return ((char *)(str + ind + 1));
+	ind = ft_strlen(str);
 	while (ind >= 0)
 	{
 		if (c == new_str[ind])
-			return ((char *)(str + ind));
+			return ((char *)str + ind);
 		ind--;
 	}
 	return (0);

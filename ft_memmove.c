@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/08 14:44:48 by gnyssens          #+#    #+#             */
+/*   Updated: 2024/04/08 14:45:13 by gnyssens         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -28,6 +39,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
+/*
 int main(void)
 {
 	char test[] = "je suis un humain";
@@ -37,3 +49,4 @@ int main(void)
 
 	return (0);
 }
+*/

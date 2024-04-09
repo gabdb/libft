@@ -17,6 +17,8 @@ char *ft_strchr(const char *str, int c)
 	const unsigned char	*new_str;
 	size_t				i;
 
+	if (!str)
+		return (0);
 	new_str = (const unsigned char*) str;
 	i = 0;
 	while (new_str[i])
@@ -29,9 +31,12 @@ char *ft_strchr(const char *str, int c)
 		return ((char *)str + i);
 	return (0);
 }
+
+/*
 int main (void)
 {
 	const char *str = "Ou est charlie";
 	int c = 0;
 	printf("%s", ft_strchr(str, c));
 }
+*/

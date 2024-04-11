@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/11 12:56:43 by gnyssens          #+#    #+#             */
+/*   Updated: 2024/04/11 15:23:39 by gnyssens         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -27,7 +37,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	}
 	return (0);
 }
-
+/*
 int main() {
     const char *haystack1 = "Hello World";
     const char *needle1 = "World";
@@ -68,3 +78,4 @@ int main() {
 
     return 0;
 }
+*/

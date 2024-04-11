@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 14:44:48 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/08 14:45:13 by gnyssens         ###   ########.fr       */
+/*   Created: 2024/04/11 12:56:12 by gnyssens          #+#    #+#             */
+/*   Updated: 2024/04/11 13:14:47 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*ndes;
 	unsigned char	*nsrc;
-	size_t				i;
+	size_t			i;
 
 	if (!dest || !src)
 		return (0);
-	ndes = (unsigned char*)dest;
-	nsrc = (unsigned char*)src;
+	ndes = (unsigned char *)dest;
+	nsrc = (unsigned char *)src;
 	if (ndes > nsrc)
 	{
 		while (n > 0)

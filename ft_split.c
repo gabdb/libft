@@ -6,11 +6,18 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:27:45 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/11 16:08:21 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:37:16 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+typedef struct s_getal
+{
+	size_t	i;
+	size_t	j;
+	size_t	x;
+}				t_getal;
 
 static size_t	ft_count_words(char const *s, char c)
 {
@@ -44,31 +51,29 @@ static size_t	ft_length_word(char const *str, char c)
 char **ft_split(char const *s, char c)
 {
 	size_t	words;
-	size_t	i;
-	size_t	j;
-	size_t	x;
 	char	**final;
+	t_getal	getal;
 
 	words = ft_count_words(s, c);
 	final = (char **)malloc(sizeof(char *) * (words + 1));
-	i = 0;
-	x = 0;
-	while(s[i])
+	if (!final)
+		return (0);
+	getal.i = 0;
+	getal.x = 0;
+	while(s[getal.i])
 	{
-		while (s[i] == c)
-			i++;
-		final[x] = (char *)malloc(ft_length_word(s + i, c) + 1);
-		j = 0;
-		while (s[i] != c && s[i])
-		{
-			final[x][j] = s[i];
-			i++;
-			j++;
-		}
-		final[x][j] = '\0';
-		x++;
+		while (s[getal.i] == c)
+			getal.i++;
+		final[getal.x] = (char *)malloc(ft_length_word(s + getal.i, c) + 1);
+		if (!final[getal.x])
+			return (0); //idealement faut une fonction qui free tout ici
+		getal.j = 0;
+		while (s[getal.i] != c && s[getal.i])
+			final[getal.x][getal.j++] = s[getal.i++];
+		final[getal.x][getal.j] = '\0';
+		getal.x++;
 	}
-	final[x] = NULL;
+	final[getal.x] = NULL;
 	return (final);
 }
 

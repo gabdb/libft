@@ -51,7 +51,7 @@ static char	*make_trim(char const *s1, char first, char last, int len)
 	return (result);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	first;
 	char	last;
@@ -76,6 +76,7 @@ int main(void)
 
 	char *final = ft_strtrim(phrase, set);
 	printf("%s\n", final);
+	free(final);
 
 	return (0);
 }

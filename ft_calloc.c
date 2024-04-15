@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:49:58 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/11 13:04:56 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:31:10 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,14 @@
 void	*ft_calloc(size_t n, size_t size)
 {
 	void			*ptr;
-	unsigned char	*new_ptr;
-	int				aantal;
-	int				i;
+	size_t			aantal;
 
-	if (n == 0 || size == 0)
-		return (0);
 	aantal = n * size;
+	if (size != 0 && (aantal / size) != n)
+		return (0);
 	ptr = (void *)malloc(aantal);
 	if (!ptr)
 		return (0);
-	new_ptr = (unsigned char *)ptr;
-	i = 0;
-	while (i < aantal)
-	{
-		*new_ptr++ = 0;
-		i++;
-	}
+	ft_bzero(ptr, n * size);
 	return (ptr);
 }

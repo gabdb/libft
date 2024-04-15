@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:54:11 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/15 13:10:29 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:49:55 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	unsigned char	*s2;
 	int				i;
 
-	if (!str1 || !str2 || n == 0)
+	if ((!str1 && !str2) || n == 0)
 		return (0);
 	s1 = (unsigned char *)str1;
 	s2 = (unsigned char *)str2;

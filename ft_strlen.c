@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:10:59 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/15 15:15:25 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:36:03 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *src)
 	size_t				i;
 	unsigned const char	*new_src;
 
-	if (!src)
-		return (0);
 	new_src = (unsigned const char *)src;
 	i = 0;
 	while (new_src[i])

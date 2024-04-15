@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:48:17 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/15 16:07:45 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:37:33 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strrchr(const char *str, int c)
 {
 	size_t			ind;
 
-	if (!str)
-		return (0);
 	if ((ft_strlen(str) == 0 || *str == 0) && c != 0)
 		return (0);
 	ind = ft_strlen(str);

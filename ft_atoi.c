@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:49:26 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/15 12:52:12 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:38:13 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_atoi(const char *str)
 	long	sign;
 	long	res;
 
-	if (!str)
-		return (0);
 	i = 0;
 	sign = 1;
 	res = 0;

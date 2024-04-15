@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:56:03 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/11 13:14:01 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:44:58 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*dest_ptr;
 	unsigned char	*src_ptr;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (0);
+	if (0 == n)
+		return (dest);
 	dest_ptr = (unsigned char *)dest;
 	src_ptr = (unsigned char *)src;
 	i = 0;

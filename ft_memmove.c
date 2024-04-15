@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:56:12 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/11 13:14:47 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:45:59 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*nsrc;
 	size_t			i;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (0);
+	if (0 == n)
+		return (dest);
 	ndes = (unsigned char *)dest;
 	nsrc = (unsigned char *)src;
 	if (ndes > nsrc)

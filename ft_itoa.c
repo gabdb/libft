@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:53:57 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/11 13:12:05 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:12:49 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,9 @@ static int	length(int n)
 	return (res);
 }
 
-static int	exp_len(int nb)
-{
-	int res;
-
-	res = 0;
-	while (nb > 9)
-	{
-		res++;
-		nb = nb / 10;
-	}
-	return (res);
-}
-
 static int	ten_exp(int n)
 {
-	int res;
+	int	res;
 
 	if (n == 0)
 		return (1);
@@ -75,25 +62,26 @@ char	*ft_itoa(int n)
 	i = 0;
 	if (n < 0)
 	{
-		result[i] = '-';
+		result[i++] = '-';
 		n *= (-1);
-		i++;
+		len--;
 	}
-	while (i < len)
+	while (len > 0)
 	{
-		result[i] = (n / ten_exp(exp_len(n))) + '0';
-		n = (n % ten_exp(exp_len(n)));
-		i++;
+		result[i++] = (n / ten_exp(len - 1)) + '0';
+		n = (n % ten_exp(len - 1));
+		len--;
 	}
 	result[i] = '\0';
 	return (result);
 }
-
+/*
 int main(void)
 {
-	int test = 2147483647;
+	int test = -12345;
 	char *result = ft_itoa(test);
 	printf("%s\n", result);
 	free(result);
 	return 0;
 }
+*/

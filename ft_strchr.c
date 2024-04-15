@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:08:20 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/08 19:02:10 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:46:30 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	const unsigned char	*new_str;
 	size_t				i;
 
 	if (!str)
 		return (0);
-	new_str = (const unsigned char*) str;
 	i = 0;
-	while (new_str[i])
+	while (str[i])
 	{
-		if (c == new_str[i])
+		if (c == str[i])
 			return ((char *)str + i);
 		i++;
 	}

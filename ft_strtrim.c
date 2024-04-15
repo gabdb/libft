@@ -6,20 +6,20 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:48:19 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/11 15:27:18 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:20:17 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int len_string(char const *s1, char first, char last)
+static int	len_string(char const *s1, char first, char last)
 {
 	size_t	len;
 	size_t	i;
 
 	len = ft_strlen(s1);
 	i = 0;
-	while(s1[i])
+	while (s1[i])
 	{
 		if (s1[i] == first || s1[i] == last)
 			len--;
@@ -48,6 +48,7 @@ static char	*make_trim(char const *s1, char first, char last, int len)
 		}
 		i++;
 	}
+	result[j] = '\0';
 	return (result);
 }
 

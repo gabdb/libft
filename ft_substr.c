@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:48:48 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/11 12:49:15 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:22:07 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (0);
-	if (start  >= ft_strlen(s))
+	if (start >= ft_strlen(s))
 	{
 		result = strdup("");
 		return (result);

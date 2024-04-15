@@ -6,18 +6,11 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:27:45 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/11 16:37:16 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:10:18 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-typedef struct s_getal
-{
-	size_t	i;
-	size_t	j;
-	size_t	x;
-}				t_getal;
 
 static size_t	ft_count_words(char const *s, char c)
 {
@@ -26,9 +19,9 @@ static size_t	ft_count_words(char const *s, char c)
 
 	count = 0;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
 		if (s[i] != '\0')
 			count++;
@@ -48,38 +41,51 @@ static size_t	ft_length_word(char const *str, char c)
 	return (i);
 }
 
-char **ft_split(char const *s, char c)
+static char	**free_all(char **dptr, size_t	x)
 {
-	size_t	words;
-	char	**final;
+	size_t	i;
+
+	i = 0;
+	while (i < x)
+	{
+		free(dptr[i]);
+		i++;
+	}
+	free(dptr);
+	return (0);
+}
+
+char	**ft_split(char const *s, char c)
+{
 	t_getal	getal;
 
-	words = ft_count_words(s, c);
-	final = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!final)
+	getal.words = ft_count_words(s, c);
+	getal.final = (char **)malloc(sizeof(char *) * (getal.words + 1));
+	if (!getal.final)
 		return (0);
 	getal.i = 0;
 	getal.x = 0;
-	while(s[getal.i])
+	while (getal.x < getal.words)
 	{
-		while (s[getal.i] == c)
+		while (s[getal.i] == c && s[getal.i])
 			getal.i++;
-		final[getal.x] = (char *)malloc(ft_length_word(s + getal.i, c) + 1);
-		if (!final[getal.x])
-			return (0); //idealement faut une fonction qui free tout ici
+		getal.final[getal.x] = malloc(ft_length_word(s + getal.i, c) + 1);
+		if (!getal.final[getal.x])
+			return (free_all(getal.final, getal.x));
 		getal.j = 0;
 		while (s[getal.i] != c && s[getal.i])
-			final[getal.x][getal.j++] = s[getal.i++];
-		final[getal.x][getal.j] = '\0';
+			getal.final[getal.x][getal.j++] = s[getal.i++];
+		getal.final[getal.x][getal.j] = '\0';
 		getal.x++;
 	}
-	final[getal.x] = NULL;
-	return (final);
+	getal.final[getal.x] = NULL;
+	return (getal.final);
 }
 
+/*
 int main(void)
 {
-	char const phrase[] = " phrase miteuse de test ";
+	char const phrase[] = "phrase miteuse de test";
 	char sep = ' ';
 
 	char	**result = ft_split(phrase, sep);
@@ -91,3 +97,4 @@ int main(void)
 
 	return 0;
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:32:51 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/17 16:18:37 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:50:45 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ void		ft_putnbr_fd(int n, int fd);
 // PROTOTYPES BONUS
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
-int			ft_lst_size(t_list *lst);
-t_list		*ft_lst_last(t_list *lst);
+int			ft_lstsize(t_list *lst);
+t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));

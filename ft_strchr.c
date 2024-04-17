@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:08:20 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/15 18:48:47 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:13:05 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *str, int c)
 	i = 0;
 	while (str[i])
 	{
-		if (c == str[i])
+		if ((char) c == str[i])
 			return ((char *)str + i);
 		i++;
 	}
-	if (c == 0)
+	if ((char) c == 0 && str[i] == 0)
 		return ((char *)str + i);
 	return (0);
 }
@@ -31,8 +31,8 @@ char	*ft_strchr(const char *str, int c)
 /*
 int main (void)
 {
-	const char *str = "Ou est charlie";
-	int c = 0;
-	printf("%s", ft_strchr(str, c));
+	printf("%s\n", ft_strchr("teste", 'e'));
+
+	return 0;
 }
 */

@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 18:39:47 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/17 19:17:08 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:46:15 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		ptr = ptr->next;
 	ptr->next = new;
 }
-

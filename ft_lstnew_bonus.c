@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:55:05 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/17 16:16:14 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:09:39 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ t_list	*ft_lstnew(void *content)
 
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
-		return (0);
-	// (*new_node).content == new_node->content
+		return (NULL);
 	new_node->content = content;
 	new_node->next = NULL;
 	return (new_node);
 }
+
 /*
 int main(void)
 {

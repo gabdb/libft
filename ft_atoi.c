@@ -14,24 +14,24 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
 	int		sign;
 	long	res;
 	long	buff;
 
-	i = 0;
+	if (!str)
+		return (0);
 	sign = 1;
 	res = 0;
 	buff = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-')
 		sign *= (-1);
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
 	{
-		res = res * 10 + str[i++] - '0';
+		res = res * 10 + *str++ - '0';
 		if (buff > res && sign > 0)
 			return (-1);
 		else if (buff > res && sign < 0)
@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 /*
 int main(void)
 {
-	const char string[] = " \t	\r 92233..";
+	const char string[] = " \t	\r 92233999914512454527335648127346545378345378378..";
 	int result = ft_atoi(string);
 
 	printf("Mon atoi : %d\nLe vrai atoi : %d", result, atoi(string));

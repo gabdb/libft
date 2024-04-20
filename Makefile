@@ -28,7 +28,7 @@ RM = rm -f
 
 
 .c.o : $(SRCS) $(BONUS_SRCS)
-	${CC} ${CFLAGS} -c -o $@ $^
+	${CC} ${CCFLAGS} -c -o $@ $^
 
 $(NAME) : $(OBJS)
 	$(ARRC) $(NAME) $(OBJS)

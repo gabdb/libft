@@ -59,10 +59,12 @@ char	**ft_split(char const *s, char c)
 {
 	t_getal	getal;
 
+	if (!s)
+		return (NULL);
 	getal.words = ft_count_words(s, c);
 	getal.final = (char **)malloc(sizeof(char *) * (getal.words + 1));
 	if (!getal.final)
-		return (0);
+		return (NULL);
 	getal.i = 0;
 	getal.x = 0;
 	while (getal.x < getal.words)

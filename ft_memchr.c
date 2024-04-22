@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:54:03 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/15 18:38:04 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:16:09 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	size_t			i;
 	unsigned char	*new_str;
 
-	if (!str)
-		return (NULL);
 	new_str = (unsigned char *)str;
 	i = 0;
 	while (i < n)

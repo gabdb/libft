@@ -6,7 +6,7 @@
 /*   By: gnyssens <gnyssens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:26:42 by gnyssens          #+#    #+#             */
-/*   Updated: 2024/04/15 18:37:01 by gnyssens         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:10:20 by gnyssens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	src_len;
 	size_t	i;
 
-	if (!dest || !src)
-		return (NULL);
 	src_len = ft_strlen(src);
 	dest_len = ft_strlen(dest);
 	if (size <= dest_len)
@@ -30,7 +28,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest[dest_len + i] = src[i];
 		i++;
 	}
-	dest[dest_len + i] = '\0';
+	if (*dest)
+		dest[dest_len + i] = '\0';
 	return (src_len + dest_len);
 }
 /*
